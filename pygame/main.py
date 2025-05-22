@@ -36,7 +36,7 @@ def main():
     # Pygameを初期化
     pygame.init()
     # ウィンドウのタイトルを設定
-    pygame.display.set_caption("人狼ゲーム")
+    pygame.display.set_caption("ワンナイト人狼")
     # 初期シーンをタイトルに設定
     scene = SCENE_TITLE
 
