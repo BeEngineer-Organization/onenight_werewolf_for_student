@@ -2,7 +2,7 @@ import pygame
 
 from common import *
 
-TITLE_X = SIDE // 24 * 5
+TITLE_X = SIDE // 24 * 2
 TITLE_Y = SIDE // 24 * 10
 
 

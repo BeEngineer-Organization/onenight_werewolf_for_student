@@ -41,8 +41,19 @@ def main():
     scene = SCENE_TITLE
 
     while True:
-        # 画面を黒色に塗りつぶす
-        SCREEN.fill(BLACK)
+        # マップの描画
+        if scene < SCENE_DISCUSS:
+            # 画面を紺色に塗りつぶす
+            SCREEN.fill(BLUE_STRONG)
+            map_data = MAP_DATA_NIGHT
+        else:
+            # 画面を水色に塗りつぶす            SCREEN.fill(STRONG_BLUE)
+            SCREEN.fill(BLUE_LIGHT)
+            map_data = MAP_DATA_DAY
+        map = Map(MAP_DICT, map_data, 32)
+        map.draw()
+        # 半透明なレイヤーを設置
+        SCREEN.blit(LAYER, (0, 0))
 
         # タイトルシーン
         if scene == SCENE_TITLE:

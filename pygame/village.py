@@ -8,8 +8,14 @@ DESCRIPTION_Y = SIDE // 24
 
 # 役職テキストのX座標
 ROLE_X = SIDE // 24
+# 村人の画像のX座標
+IMAGE_VILLAGER_X = SIDE // 24 * 5
+# 占い師の画像のX座標
+IMAGE_FORTUNE_TELLER_X = SIDE // 24 * 7
+# 人狼の画像のX座標
+IMAGE_WEREWOLF_X = SIDE // 24 * 5
 # 役職説明テキストのX座標
-ROLE_DESCRIPTION_X = SIDE // 24 * 8
+ROLE_DESCRIPTION_X = SIDE // 24 * 9
 # 役職説明テキストの幅
 ROLE_DESCRIPTION_W = SIDE // 24 * 8
 # 役職人数テキストのX座標

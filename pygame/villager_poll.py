@@ -32,7 +32,35 @@ SELECT_BUTTON = Button(
 
 
 def draw_villager_poll_scene(villager_poll_index):
-    pass
+    # テキスト描画クラスの設定
+    text_drawer = TextDrawer(JAPANESE_FONT_FILE)
+    # 選択対象のプレイヤーの描画
+    text_drawer.draw_text(
+        text="プレイヤー",
+        font_size=FONT_SIZE_M,
+        x=SELECTED_PLAYER_X,
+        y=SELECTED_PLAYER_Y,
+    )
+    # 減少ボタンの描画
+    DECREASE_BUTTON.draw("-")
+    # 人数テキストの描画
+    text_drawer.draw_text(
+        text=str(villager_poll_index + 1),
+        font_size=FONT_SIZE_M,
+        x=PLAYER_NUMBER_X,
+        y=SELECTED_PLAYER_Y,
+    )
+    # 増加ボタンの描画
+    INCREASE_BUTTON.draw("+")
+    # テキストの描画
+    text_drawer.draw_text(
+        text="が怪しいと思う。",
+        font_size=FONT_SIZE_M,
+        x=SELECTED_PLAYER_X,
+        y=ADDITIONAL_TEXT_Y,
+    )
+    # ボタンの描画
+    SELECT_BUTTON.draw("決定")
 
 
 def update_villager_poll_scene(

@@ -16,8 +16,10 @@ BUTTON_W = SIDE // 24 * 9
 # 確定ボタンの高さ
 BUTTON_H = SIDE // 24 * 3
 
-# 上のボタンのY座標
-UPPER_BUTTON_Y = SIDE // 24 * 16
+# 左ボタンのX座標
+BUTTON_LEFT_X = SIDE // 24 * 7
+# 右ボタンのX座標
+BUTTON_RIGHT_X = SIDE // 24 * 17
 
 # テキストのX座標
 TEXT_X = SIDE // 24 * 3
@@ -27,6 +29,11 @@ TEXT_Y = SIDE // 24 * 7
 LONG_TEXT_Y = SIDE // 24 * 4
 # テキストの幅
 TEXT_W = SIDE // 24 * 20
+
+# 画像のX座標
+IMAGE_X = SIDE // 24 * 10
+# 画像のY座標
+IMAGE_Y = SIDE // 24 * 13
 
 # 経過時間テキストのX座標
 TIMEDELTA_TEXT_X = SIDE // 24 * 7
@@ -69,6 +76,10 @@ PLAYER_W = SIDE // 24 * 22
 BLACK = (0, 0, 0)
 # 白
 WHITE = (255, 255, 255)
+# 紺
+BLUE_STRONG = "#274a78"
+# 水色
+BLUE_LIGHT = "#e0ffff"
 
 # タイトルシーン
 SCENE_TITLE = 0
@@ -98,6 +109,288 @@ SCENE_POLL = 11
 SCENE_PUNISHMENT = 12
 # 結果シーン
 SCENE_RESULT = 13
+
+# 村人画像
+IMAGE_VILLAGER = pygame.image.load("images/villager.png")
+# 占い師画像
+IMAGE_FORTUNE_TELLER = pygame.image.load("images/fortune_teller.png")
+# 人狼画像
+IMAGE_WEREWOLF = pygame.image.load("images/werewolf.png")
+# 村人画像（大）
+IMAGE_VILLAGER_BIG = pygame.image.load("images/villager_big.png")
+# 占い師画像（大）
+IMAGE_FORTUNE_TELLER_BIG = pygame.image.load("images/fortune_teller_big.png")
+# 人狼画像（大）
+IMAGE_WEREWOLF_BIG = pygame.image.load("images/werewolf_big.png")
+# 草原マップ1
+MAPTILE_GRASS_1 = pygame.image.load("images/maptile/grass1.png")
+# 草原マップ2
+MAPTILE_GRASS_2 = pygame.image.load("images/maptile/grass2.png")
+# 太陽
+MAPTILE_SUN = pygame.image.load("images/maptile/sun.png")
+# 雲
+MAPTILE_CLOUD = pygame.image.load("images/maptile/cloud.png")
+# 月
+MAPTILE_MOON = pygame.image.load("images/maptile/moon.png")
+# 星
+MAPTILE_STAR = pygame.image.load("images/maptile/star.png")
+# 教会
+MAPTILE_CHURCH = pygame.image.load("images/maptile/church.png")
+# マップ変換辞書
+MAP_DICT = {
+    "g1": MAPTILE_GRASS_1,
+    "g2": MAPTILE_GRASS_2,
+    "sun": MAPTILE_SUN,
+    "cloud": MAPTILE_CLOUD,
+    "m": MAPTILE_MOON,
+    "star": MAPTILE_STAR,
+    "church": MAPTILE_CHURCH,
+}
+# 夜のマップデータ
+MAP_DATA_NIGHT = [
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "star", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "m", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "star", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "church", "", "", "", "", "", "", "", "", "star", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "star", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    [
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+    ],
+    [
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+    ],
+    [
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+    ],
+    [
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+    ],
+    [
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+    ],
+    [
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+        "g1",
+    ],
+]
+# 昼のマップデータ
+MAP_DATA_DAY = [
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "cloud", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "sun", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "cloud", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "church", "", "", "", "", "", "", "", "", "cloud", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "cloud", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    [
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+    ],
+    [
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+    ],
+    [
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+    ],
+    [
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+    ],
+    [
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+    ],
+    [
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+        "g2",
+    ],
+]
+# レイヤー
+LAYER = pygame.Surface((SIDE, SIDE), flags=pygame.SRCALPHA)
+LAYER.fill((0, 0, 0, 160))
 
 
 # テキスト描画クラス
@@ -175,3 +468,21 @@ class Button:
 
     def get_rect(self):
         return pygame.Rect(self.x, self.y, self.w, self.h)
+
+
+class Map:
+    def __init__(self, map_dict, map_data, tile_size):
+        self.map_dict = map_dict
+        self.map_data = map_data
+        self.tile_size = tile_size
+
+    def draw(self):
+        i_max = len(self.map_data[0])
+        j_max = len(self.map_data)
+        for i in range(i_max):
+            for j in range(j_max):
+                try:
+                    image = self.map_dict[self.map_data[i][j]]
+                    SCREEN.blit(image, (j * self.tile_size, i * self.tile_size))
+                except KeyError:
+                    pass

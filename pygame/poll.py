@@ -31,7 +31,7 @@ SELECT_BUTTON = Button(
 )
 
 
-def draw_poll_scene(polled_index):
+def draw_poll_scene(polled_index, player):
     pass
 
 
