@@ -47,7 +47,7 @@ def main():
             SCREEN.fill(BLUE_STRONG)
             map_data = MAP_DATA_NIGHT
         else:
-            # 画面を水色に塗りつぶす            SCREEN.fill(STRONG_BLUE)
+            # 画面を水色に塗りつぶす
             SCREEN.fill(BLUE_LIGHT)
             map_data = MAP_DATA_DAY
         map = Map(MAP_DICT, map_data, 32)
