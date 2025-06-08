@@ -59,6 +59,8 @@ def draw_villager_poll_scene(villager_poll_index):
         x=SELECTED_PLAYER_X,
         y=ADDITIONAL_TEXT_Y,
     )
+    # 画像の描画
+    SCREEN.blit(IMAGE_VILLAGER_BIG, (IMAGE_X, IMAGE_Y))
     # ボタンの描画
     SELECT_BUTTON.draw("決定")
 
