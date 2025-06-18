@@ -111,31 +111,31 @@ SCENE_PUNISHMENT = 12
 SCENE_RESULT = 13
 
 # 村人画像
-IMAGE_VILLAGER = pygame.image.load("images/villager.png")
+IMAGE_VILLAGER = pygame.image.load("images/character_murabito_young_man_green.png")
 # 占い師画像
-IMAGE_FORTUNE_TELLER = pygame.image.load("images/fortune_teller.png")
+IMAGE_FORTUNE_TELLER = pygame.image.load("images/character_uranaishi_02.png")
 # 人狼画像
-IMAGE_WEREWOLF = pygame.image.load("images/werewolf.png")
+IMAGE_WEREWOLF = pygame.image.load("images/character_jujin_okami_man_gray.png")
 # 村人画像（大）
-IMAGE_VILLAGER_BIG = pygame.image.load("images/villager_big.png")
+IMAGE_VILLAGER_BIG = pygame.image.load("images/character_murabito_young_man_green (1).png")
 # 占い師画像（大）
-IMAGE_FORTUNE_TELLER_BIG = pygame.image.load("images/fortune_teller_big.png")
+IMAGE_FORTUNE_TELLER_BIG = pygame.image.load("images/character_uranaishi_02 (1).png")
 # 人狼画像（大）
-IMAGE_WEREWOLF_BIG = pygame.image.load("images/werewolf_big.png")
+IMAGE_WEREWOLF_BIG = pygame.image.load("images/character_jujin_okami_man_gray (1).png")
 # 草原マップ1
-MAPTILE_GRASS_1 = pygame.image.load("images/maptile/grass1.png")
+MAPTILE_GRASS_1 = pygame.image.load("images/maptile_sogen_01.png")
 # 草原マップ2
-MAPTILE_GRASS_2 = pygame.image.load("images/maptile/grass2.png")
+MAPTILE_GRASS_2 = pygame.image.load("images/maptile_sogen_02.png")
 # 太陽
-MAPTILE_SUN = pygame.image.load("images/maptile/sun.png")
+MAPTILE_SUN = pygame.image.load("images/weather_sunny.png")
 # 雲
-MAPTILE_CLOUD = pygame.image.load("images/maptile/cloud.png")
+MAPTILE_CLOUD = pygame.image.load("images/weather_cloudy_white.png")
 # 月
-MAPTILE_MOON = pygame.image.load("images/maptile/moon.png")
+MAPTILE_MOON = pygame.image.load("images/moon_lightyellow.png")
 # 星
-MAPTILE_STAR = pygame.image.load("images/maptile/star.png")
+MAPTILE_STAR = pygame.image.load("images/kirakira_02_lightyellow.png")
 # 教会
-MAPTILE_CHURCH = pygame.image.load("images/maptile/church.png")
+MAPTILE_CHURCH = pygame.image.load("images/kyokai_02_brown.png")
 # マップ変換辞書
 MAP_DICT = {
     "g1": MAPTILE_GRASS_1,
