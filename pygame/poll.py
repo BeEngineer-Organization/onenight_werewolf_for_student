@@ -72,4 +72,21 @@ def draw_poll_scene(poll_index, player):
 
 
 def update_poll_scene(player_index_for_poll, poll_index, poll_index_max, players):
-    pass
+    scene = SCENE_POLL
+    pos =  pygame.mouse.get_pos()
+    if INCREASE_BUTTON.get_rect().collidepoint(pos):
+        poll_index += 1
+        if poll_index > poll_index_max:
+            poll_index = poll_index_max
+
+    elif DECREASE_BUTTON.get_rect().collidepoint(pos):
+        poll_index -= 1
+        if poll_index < 0 :
+            poll_index = 0
+
+    elif SELECT_BUTTON.get_rect().collidepoint(pos):
+        players[poll_index]["poll_count"] += 1
+        player_index_for_poll += 1
+        scene = SCENE_PLAYER_FOR_POLL
+
+    return (scene,player_index_for_poll,poll_index,players)

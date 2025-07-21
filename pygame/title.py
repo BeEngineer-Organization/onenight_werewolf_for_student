@@ -18,8 +18,20 @@ BUTTON = Button(
 
 
 def draw_title_scene():
-    pass
+    text_drawer = TextDrawer(JAPANESE_FONT_FILE)
+    text_drawer.draw_text(
+        text = "人狼ゲーム",
+        font_size=FONT_SIZE_L,
+        x=TITLE_X,
+        y=TITLE_Y,
+    )
+    BUTTON.draw("村へ")
 
 
 def update_title_scene():
-    pass
+    pos = pygame.mouse.get_pos()
+    scene = SCENE_TITLE
+    if BUTTON.get_rect().collidepoint(pos):
+        scene = SCENE_VILLAGE
+
+    return scene

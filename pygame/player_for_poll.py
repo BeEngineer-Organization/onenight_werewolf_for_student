@@ -28,4 +28,8 @@ def draw_player_for_poll_scene(player):
 
 
 def update_player_for_poll_scene():
-    pass
+    pos = pygame.mouse.get_pos()
+    scene = SCENE_PLAYER_FOR_POLL
+    if BUTTON.get_rect().collidepoint(pos):
+        scene = SCENE_POLL
+    return scene

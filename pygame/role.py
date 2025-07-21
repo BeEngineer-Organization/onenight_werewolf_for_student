@@ -36,4 +36,13 @@ def draw_role_scene(player):
 
 
 def update_role_scene(player):
-    pass
+    pos = pygame.mouse.get_pos()
+    scene = SCENE_ROLE
+    if BUTTON.get_rect().collidepoint(pos):
+        if player["role"] == "村人":
+            scene = SCENE_VILLAGER_POLL
+        elif player["role"] == "占い師":
+            scene = SCENE_FORTUNE_TELLER_SELECT
+        elif player["role"] == "人狼":
+            scene = SCENE_WEREWOLF
+    return scene

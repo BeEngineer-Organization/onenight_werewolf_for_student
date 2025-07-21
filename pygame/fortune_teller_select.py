@@ -42,4 +42,10 @@ def draw_fortune_teller_select_scene():
 
 
 def update_fortune_teller_select_scene():
-    pass
+    pos = pygame.mouse.get_pos()
+    scene = SCENE_FORTUNE_TELLER_SELECT
+    if PLAYER_BUTTON.get_rect().collidepoint(pos):
+        scene = SCENE_FORTUNE_TELLER
+    elif GRAVE_BUTTON.get_rect().collidepoint(pos):
+        scene = SCENE_FORTUNE_TELLER_ROLE
+    return scene 

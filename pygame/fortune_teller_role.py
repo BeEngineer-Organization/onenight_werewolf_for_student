@@ -14,8 +14,28 @@ BUTTON = Button(
 
 
 def draw_fortune_teller_role_scene(players, fortune_tell_index=-1):
-    pass
+    text_drawer = TextDrawer(JAPANESE_FONT_FILE)
+    if fortune_tell_index >= 0:
+        text = f"{players[fortune_tell_index]['name']}の役職は「{players[fortune_tell_index]['role']}」です。"
+    else:
+        text = f"墓地に残された２つの役職は「{players[-2]['role']}」と「{players[-1]['role']}」です。"
+    text_drawer.draw_text_with_line_break(
+        text=text,
+        font_size=FONT_SIZE_M,
+        x=TEXT_X,
+        y=TEXT_Y,
+        w=TEXT_W,
+    )
+
+    SCREEN.blit(IMAGE_FORTUNE_TELLER_BIG,(IMAGE_X,IMAGE_Y))
+    BUTTON.draw("確認")
 
 
 def update_fortune_teller_role_scene(player_index):
-    pass
+    pos = pygame.mouse.get_pos()
+    scene = SCENE_FORTUNE_TELLER_ROLE
+    if BUTTON.get_rect().collidepoint(pos):
+        player_index += 1
+        scene = SCENE_PLAYER
+    
+    return scene,player_index

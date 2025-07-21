@@ -77,5 +77,24 @@ def draw_fortune_teller_scene(fortune_tell_index):
     BACK_BUTTON.draw("戻る")
 
 
-def update_fortune_teller_scene(fortune_tell_index, fortune_tell_index_max):
-    pass
+def update_fortune_teller_scene(fortune_tell_index, fortune_tell_index_max,is_grave):
+    scene = SCENE_FORTUNE_TELLER
+    pos = pygame.mouse.get_pos()
+    if INCREASE_BUTTON.get_rect().collidepoint(pos):
+        fortune_tell_index += 1
+        if fortune_tell_index > fortune_tell_index_max:
+            fortune_tell_index = fortune_tell_index_max
+
+    elif DECREASE_BUTTON.get_rect().collidepoint(pos):
+        fortune_tell_index -= 1
+        if fortune_tell_index < 0:
+            fortune_tell_index = 0
+    
+    elif SELECT_BUTTON.get_rect().collidepoint(pos):
+        scene = SCENE_FORTUNE_TELLER_ROLE
+        is_grave = False
+
+    elif BACK_BUTTON.get_rect().collidepoint(pos):
+        scene = SCENE_FORTUNE_TELLER_SELECT
+    
+    return (scene,fortune_tell_index,is_grave)

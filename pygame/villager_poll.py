@@ -68,4 +68,20 @@ def draw_villager_poll_scene(villager_poll_index):
 def update_villager_poll_scene(
     player_index, villager_poll_index, villager_poll_index_max, players
 ):
-    pass
+    scene = SCENE_VILLAGER_POLL
+    pos = pygame.mouse.get_pos()
+    if INCREASE_BUTTON.get_rect().collidepoint(pos):
+        villager_poll_index += 1
+        if villager_poll_index > villager_poll_index_max:
+            villager_poll_index = villager_poll_index_max
+    elif DECREASE_BUTTON.get_rect().collidepoint(pos):
+        villager_poll_index -= 1
+        if villager_poll_index < 0:
+            villager_poll_index = 0
+    
+    elif SELECT_BUTTON.get_rect().collidepoint(pos):
+        players[villager_poll_index]["villager_poll_count"] += 1
+        villager_poll_index = 0
+        player_index += 1
+        scene = SCENE_PLAYER
+    return (scene,villager_poll_index,player_index,players)
