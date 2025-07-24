@@ -121,7 +121,70 @@ def draw_village_scene(
     fortune_teller_count,
     werewolf_count,
 ):
-    pass
+    # ここに村人に関するコードを追加
+
+
+    # 占い師
+    # 役職テキストの描画
+    text_drawer.draw_text(
+        text="占い師",
+        font_size=FONT_SIZE_M,
+        x=ROLE_X,
+        y=FORTUNE_TELLER_Y,
+    )
+    # 画像表示
+    SCREEN.blit(IMAGE_FORTUNE_TELLER, (IMAGE_FORTUNE_TELLER_X, FORTUNE_TELLER_Y))
+    # 役職説明テキストの描画
+    text_drawer.draw_text_with_line_break(
+        text="村人チームです。プレイヤー1人か墓地の2枚の役職がわかります。",
+        font_size=FONT_SIZE_S,
+        x=ROLE_DESCRIPTION_X,
+        y=FORTUNE_TELLER_Y,
+        w=ROLE_DESCRIPTION_W,
+    )
+    # 占い師減少ボタンの描画
+    DECREASE_FORTUNE_TELLER_BUTTON.draw("-")
+    # 人数テキストの描画
+    text_drawer.draw_text(
+        text=str(fortune_teller_count),
+        font_size=FONT_SIZE_M,
+        x=ROLE_NUMBER_X,
+        y=FORTUNE_TELLER_Y,
+    )
+    # 占い師増加ボタンの描画
+    INCREASE_FORTUNE_TELLER_BUTTON.draw("+")
+
+    # 人狼
+    # 役職テキストの描画
+    text_drawer.draw_text(
+        text="人狼",
+        font_size=FONT_SIZE_M,
+        x=ROLE_X,
+        y=WEREWOLF_Y,
+    )
+    # 画像表示
+    SCREEN.blit(IMAGE_WEREWOLF, (IMAGE_WEREWOLF_X, WEREWOLF_Y))
+    # 役職説明テキストの描画
+    text_drawer.draw_text_with_line_break(
+        text="人狼チームです。村人チームには、自分が人狼だとバレないようにしましょう。",
+        font_size=FONT_SIZE_S,
+        x=ROLE_DESCRIPTION_X,
+        y=WEREWOLF_Y,
+        w=ROLE_DESCRIPTION_W,
+    )
+    # 人狼減少ボタンの描画
+    DECREASE_WEREWOLF_BUTTON.draw("-")
+    # 人数テキストの描画
+    text_drawer.draw_text(
+        text=str(werewolf_count),
+        font_size=FONT_SIZE_M,
+        x=ROLE_NUMBER_X,
+        y=WEREWOLF_Y,
+    )
+    # 人狼増加ボタンの描画
+    INCREASE_WEREWOLF_BUTTON.draw("+")
+
+    # ここにスタートボタンに関するコードを追加
 
 
 def update_village_scene(
@@ -130,4 +193,48 @@ def update_village_scene(
     werewolf_count,
     players,
 ):
-    pass
+    # シーン
+    scene = ""
+    # クリック位置を取得
+    pos = ""
+    if START_BUTTON.get_rect().collidepoint(pos):
+        # スタートボタンがクリックされたときの処理を書く場所
+        pass
+
+    elif INCREASE_VILLAGER_BUTTON.get_rect().collidepoint(pos):
+        # 村人増加ボタンがクリックされたときの処理を書く場所
+        pass
+
+    elif DECREASE_VILLAGER_BUTTON.get_rect().collidepoint(pos):
+        # 村人減少ボタンがクリックされたときの処理を書く場所
+        pass
+
+    elif INCREASE_FORTUNE_TELLER_BUTTON.get_rect().collidepoint(pos):
+        # クリック位置が占い師増加ボタンの範囲内なら占い師数増加
+        fortune_teller_count += 1
+        # 占い師の最大人数
+        if fortune_teller_count > FORTUNE_TELLER_MAX:
+            fortune_teller_count = FORTUNE_TELLER_MAX
+
+    elif DECREASE_FORTUNE_TELLER_BUTTON.get_rect().collidepoint(pos):
+        # クリック位置が占い師減少ボタンの範囲内なら占い師数減少
+        fortune_teller_count -= 1
+        # 占い師の最小人数
+        if fortune_teller_count < FORTUNE_TELLER_MIN:
+            fortune_teller_count = FORTUNE_TELLER_MIN
+
+    elif INCREASE_WEREWOLF_BUTTON.get_rect().collidepoint(pos):
+        # クリック位置が人狼増加ボタンの範囲内なら人狼数増加
+        werewolf_count += 1
+        # 人狼の最大人数
+        if werewolf_count > WEREWOLF_MAX:
+            werewolf_count = WEREWOLF_MAX
+
+    elif DECREASE_WEREWOLF_BUTTON.get_rect().collidepoint(pos):
+        # クリック位置が人狼減少ボタンの範囲内なら人狼数減少
+        werewolf_count -= 1
+        # 人狼の最小人数
+        if werewolf_count < WEREWOLF_MIN:
+            werewolf_count = WEREWOLF_MIN
+
+    return 

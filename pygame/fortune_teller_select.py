@@ -41,5 +41,15 @@ def draw_fortune_teller_select_scene():
     GRAVE_BUTTON.draw("墓地")
 
 
-def update_fortune_teller_select_scene():
-    pass
+def update_fortune_teller_select_scene(is_grave):
+    # クリック位置を取得
+    pos = pygame.mouse.get_pos()
+    scene = SCENE_FORTUNE_TELLER_SELECT
+    if PLAYER_BUTTON.get_rect().collidepoint(pos):
+        # クリック位置がボタンの範囲内なら占い師シーンに移動
+        scene = SCENE_FORTUNE_TELLER
+    elif GRAVE_BUTTON.get_rect().collidepoint(pos):
+        # クリック位置がボタンの範囲内なら占い師役職シーンに移動
+        scene = SCENE_FORTUNE_TELLER_ROLE
+        is_grave = True
+    return scene, is_grave
